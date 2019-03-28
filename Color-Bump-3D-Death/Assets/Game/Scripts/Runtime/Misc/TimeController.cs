@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Wokarol
 {
+    /// <summary>
+    /// Handles Bullet Time on Player Death
+    /// </summary>
     public class TimeController : MonoBehaviour
     {
         [SerializeField] float _minTime = 0.1f;
@@ -25,6 +28,7 @@ namespace Wokarol
 
         private void Update() {
             if (_isActive) {
+                // Lerps form normal to bullet time with given speed
                 Time.timeScale = Mathf.Lerp(1, _minTime, (Time.unscaledTime - _timeStamp) / _timeSlowTime);
                 Time.fixedDeltaTime = 0.02f * Time.timeScale;
             }

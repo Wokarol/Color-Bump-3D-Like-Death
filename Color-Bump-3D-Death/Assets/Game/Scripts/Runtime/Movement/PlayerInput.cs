@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Wokarol
 {
+    /// <summary>
+    /// Handles only Player Input 
+    /// </summary>
     public class PlayerInput : MonoBehaviour
     {
         [SerializeField] PlayerMovement _playerMovement = null;

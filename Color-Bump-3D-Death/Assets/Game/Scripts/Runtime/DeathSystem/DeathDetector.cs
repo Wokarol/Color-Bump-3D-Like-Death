@@ -4,9 +4,12 @@ using UnityEngine;
 
 namespace Wokarol
 {
+    /// <summary>
+    /// Detects if object touched Obstacle and if, spawns fractured version, raises "Player Died" message and disables itself
+    /// </summary>
     public class DeathDetector : MonoBehaviour
     {
-        [SerializeField] FracturedSphere brokenBall;
+        [SerializeField] FracturedObject fracturedPrefab = default;
 
         Rigidbody _rigidbody;
 
@@ -16,7 +19,7 @@ namespace Wokarol
 
         private void OnCollisionEnter(Collision collision) {
             if (collision.collider.CompareTag("Obstacle")) {
-                var ball = Instantiate(brokenBall, transform.position, Quaternion.identity).Init(_rigidbody.velocity);
+                var ball = Instantiate(fracturedPrefab, transform.position, Quaternion.identity).Init(_rigidbody.velocity);
                 MessageSystem.Messenger.Default.SendMessage(new PlayerDied());
                 gameObject.SetActive(false);
             }

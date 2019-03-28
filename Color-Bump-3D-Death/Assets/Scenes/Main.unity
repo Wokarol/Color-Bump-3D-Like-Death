@@ -2877,7 +2877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1412049898}
-  _startPos: -83.5
+  _startPos: -83
   _endPos: -30
 --- !u!1 &952458472
 GameObject:
@@ -6647,11 +6647,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4830422361337826046, guid: 0c661c4d657fbd64bb290778903b884c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4830422361337665246, guid: 0c661c4d657fbd64bb290778903b884c,
         type: 3}

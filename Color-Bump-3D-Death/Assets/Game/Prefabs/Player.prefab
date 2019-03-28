@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9602f8885098fb4c91449c1eec573e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokenBall: {fileID: 5516111854920328370, guid: f3990185af121d646bdc3b3f7d09582b,
+  fracturedPrefab: {fileID: 5516111854920328370, guid: f3990185af121d646bdc3b3f7d09582b,
     type: 3}
 --- !u!1001 &4830422361337793630
 PrefabInstance:
@@ -214,6 +214,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 546979368202d0949be59f2304a9c4ce, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 546979368202d0949be59f2304a9c4ce, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 546979368202d0949be59f2304a9c4ce, type: 3}
       propertyPath: m_LocalPosition.x

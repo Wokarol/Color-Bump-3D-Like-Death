@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Wokarol
 {
+    /// <summary>
+    /// Stops Camera Dolly when "Player Died" is raised
+    /// </summary>
     [RequireComponent(typeof(Cinemachine.CinemachineDollyCart))]
     public class CameraDollyController : MonoBehaviour
     {

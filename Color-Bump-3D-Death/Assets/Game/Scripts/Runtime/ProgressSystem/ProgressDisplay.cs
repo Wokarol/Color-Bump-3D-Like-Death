@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 namespace Wokarol
 {
+    /// <summary>
+    /// Displays Game Progress from Game Data to Filled Image
+    /// </summary>
     public class ProgressDisplay : MonoBehaviour
     {
-        [SerializeField] Image _image;
+        [SerializeField] Image _image = null;
 
         GameData _gameData;
 

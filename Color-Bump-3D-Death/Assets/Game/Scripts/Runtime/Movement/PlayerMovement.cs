@@ -4,14 +4,19 @@ using UnityEngine;
 
 namespace Wokarol
 {
+    /// <summary>
+    /// Handles Player Movement without input
+    /// </summary>
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerMovement : MonoBehaviour
     {
-        [SerializeField] float _speed;
-        //[SerializeField] float _constantForce = 0.5f;
+        [SerializeField] float _speed = default;
 
         Rigidbody _rigidbody;
 
+        /// <summary>
+        /// Player Movement will try to go to that position
+        /// </summary>
         public Vector3 TargetPosition { get; set; }
 
         private void Awake() {
