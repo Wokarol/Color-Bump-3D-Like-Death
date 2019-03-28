@@ -10,6 +10,7 @@ namespace Wokarol
     public class DeathDetector : MonoBehaviour
     {
         [SerializeField] FracturedObject fracturedPrefab = default;
+        [SerializeField] Cinemachine.CinemachineImpulseSource _impulse = default;
 
         Rigidbody _rigidbody;
 
@@ -22,6 +23,7 @@ namespace Wokarol
                 // Can be optimised using Object Pooling
                 var ball = Instantiate(fracturedPrefab, transform.position, Quaternion.identity).Init(_rigidbody.velocity);
 
+                _impulse.GenerateImpulse();
                 MessageSystem.Messenger.Default.SendMessage(new PlayerDied());
                 gameObject.SetActive(false);
             }
