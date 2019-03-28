@@ -1,0 +1,15 @@
+{
+    "name": "Runtime",
+    "references": [
+        "Unity.TextMeshPro",
+        "Cinemachine"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
