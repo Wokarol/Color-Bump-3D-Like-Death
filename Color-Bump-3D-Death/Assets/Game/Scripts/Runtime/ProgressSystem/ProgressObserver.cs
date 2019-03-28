@@ -17,6 +17,7 @@ namespace Wokarol
 
         private void Start() {
             _gameData = GameData.Default;
+            _gameData.Progress = 0;
         }
 
         private void Update() {
