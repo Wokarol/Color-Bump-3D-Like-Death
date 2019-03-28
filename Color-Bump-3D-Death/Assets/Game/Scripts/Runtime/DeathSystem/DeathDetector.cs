@@ -19,7 +19,9 @@ namespace Wokarol
 
         private void OnCollisionEnter(Collision collision) {
             if (collision.collider.CompareTag("Obstacle")) {
+                // Can be optimised using Object Pooling
                 var ball = Instantiate(fracturedPrefab, transform.position, Quaternion.identity).Init(_rigidbody.velocity);
+
                 MessageSystem.Messenger.Default.SendMessage(new PlayerDied());
                 gameObject.SetActive(false);
             }
