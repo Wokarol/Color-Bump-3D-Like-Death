@@ -11,6 +11,7 @@ namespace Wokarol
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] float _speed = default;
+        [SerializeField] float _maxSpeedAtDistance = default;
 
         Rigidbody _rigidbody;
 
@@ -18,15 +19,21 @@ namespace Wokarol
         /// Player Movement will try to go to that position
         /// </summary>
         public Vector3 TargetPosition { get; set; }
+        public float Speed => _speed;
 
         private void Awake() {
             _rigidbody = GetComponent<Rigidbody>();
         }
 
         private void FixedUpdate() {
-            var direction = (TargetPosition - _rigidbody.position).normalized;
+            var difference = TargetPosition - _rigidbody.position;
+            _rigidbody.AddForce(difference.normalized * Mathf.Clamp01(difference.magnitude / _maxSpeedAtDistance) * _speed);
 
-            _rigidbody.AddForce(direction * _speed);
+            //_rigidbody.AddForce(direction * _speed);
+        }
+
+        private void OnDrawGizmos() {
+            Gizmos.DrawWireSphere(TargetPosition, 0.4f);
         }
     } 
 }
